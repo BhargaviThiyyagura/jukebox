@@ -15,7 +15,10 @@
 # gem 'pg'
 #
 default: &default
-  template: template0 
+  host: pg
+  username: postgres
+  password: <%= ENV['PGPASSWORD'] %>
+  template: template0
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -82,5 +85,3 @@ test:
 production:
   <<: *default
   database: jukebox_production
-  username: jukebox
-  password: <%= ENV['JUKEBOX_DATABASE_PASSWORD'] %>
