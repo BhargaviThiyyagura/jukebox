@@ -84,4 +84,7 @@ test:
 #
 production:
   <<: *default
+  host: pgbhargavi.postgres.database.azure.com
+  username: bhargavi@pgbhargavi
+  password: <%= ENV['PGPASSWORD']%>
   database: jukebox_production
